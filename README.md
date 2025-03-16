@@ -113,3 +113,13 @@ stock-simulator/
 - Improve test coverage with **unit and integration tests**.
 
 ---
+## Contributing
+
+This repository is contribution friendly. Refer to [Contribution Guidelines](.github/contributing.md).
+
+---
+
+## License
+This project is licensed under the GNU General Public License v3.0
+
+---
