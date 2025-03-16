@@ -1,0 +1,25 @@
+target/
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Ignore Eclipse project files
+.project
+.classpath
+.settings/
+
+# Ignore VS Code workspace files
+.vscode/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+logs/
+*.log
