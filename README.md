@@ -140,6 +140,7 @@ stock-simulator/
 ## **Improvements & Future Enhancements**
 
 - Add UI support for buying and selling stocks.
+- Enhance UI/UX design for a more modern, intuitive, and responsive interface using styling libraries.
 - Replace H2 with a persistent database like **PostgreSQL** or **MySQL**.
 - Add **user authentication** and roles (e.g., admin, trader).
 - Implement **real-time stock price updates** via WebSockets.
