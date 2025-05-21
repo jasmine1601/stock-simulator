@@ -20,27 +20,27 @@ public class PortfolioService {
         this.stockRepository = stockRepository;
     }
 
-    public List<Portfolio> getUserPortfolio(String user) {
-        return portfolioRepository.findByUser(user);
+    public List<Portfolio> getUserPortfolio(String userName) {
+        return portfolioRepository.findByUserName(userName);
     }
 
-    public void buyStock(String user, String symbol, int quantity) {
+    public void buyStock(String userName, String symbol, int quantity) {
         Stock stock = stockRepository.findBySymbol(symbol).orElseThrow();
         BigDecimal cost = stock.getPrice().multiply(BigDecimal.valueOf(quantity));
 
-        Optional<Portfolio> portfolioOpt = portfolioRepository.findByUserAndStockSymbol(user, symbol);
+        Optional<Portfolio> portfolioOpt = portfolioRepository.findByUserNameAndStockSymbol(userName, symbol);
         if (portfolioOpt.isPresent()) {
             Portfolio portfolio = portfolioOpt.get();
             portfolio.setQuantity(portfolio.getQuantity() + quantity);
             portfolio.setTotalInvestment(portfolio.getTotalInvestment().add(cost));
             portfolioRepository.save(portfolio);
         } else {
-            portfolioRepository.save(new Portfolio(user, symbol, quantity, cost));
+            portfolioRepository.save(new Portfolio(userName, symbol, quantity, cost));
         }
     }
 
-    public void sellStock(String user, String symbol, int quantity) {
-        Portfolio portfolio = portfolioRepository.findByUserAndStockSymbol(user, symbol).orElseThrow();
+    public void sellStock(String userName, String symbol, int quantity) {
+        Portfolio portfolio = portfolioRepository.findByUserNameAndStockSymbol(userName, symbol).orElseThrow();
         if (portfolio.getQuantity() < quantity) {
             throw new IllegalArgumentException("Not enough stock to sell.");
         }

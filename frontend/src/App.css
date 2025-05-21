@@ -1,0 +1,178 @@
+:root {
+  /* Primary Colors */
+  --primary-bg: #6563c0;
+  --primary-btn: #012aaf;
+  --primary-btn-hover: #011f83;
+
+  /* Text & Link Colors */
+  --text-dark: #333;
+  --text-light: white;
+  --link-active: #0074d9;
+
+  /* Table Colors */
+  --table-header-bg: #8fb3d3;
+  --table-header-text: rgb(0, 0, 0);
+  --table-hover: #f1f9ff;
+  --table-border: #ddd;
+
+  /* Other Colors */
+  --h1-bg: rgb(223, 223, 223);
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --box-shadow-h2: rgba(1, 81, 151, 0.3);
+}
+
+/* App Container */
+.app-container {
+  padding: 20px;
+  font-family: Roboto, Arial, sans-serif;
+  height: 100%;
+}
+
+/* Headings */
+h1 {
+  color: var(--primary-bg);
+  text-align: center;
+  background-color: var(--h1-bg);
+  padding: 20px;
+}
+
+h2 {
+  background-color: var(--primary-bg);
+  color: var(--text-light);
+  padding: 12px 20px;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  box-shadow: 0 4px 8px var(--box-shadow-h2);
+  margin-bottom: 0;
+}
+
+/* Navigation */
+nav {
+  margin-bottom: 30px;
+  box-shadow: inset;
+  text-align: center;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text-dark);
+  font-size: x-large;
+}
+
+nav a.active {
+  color: var(--link-active);
+  border-bottom: 2px solid var(--link-active);
+}
+
+/* Stock Table */
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 10px var(--box-shadow-color);
+  padding: 20px;
+}
+
+.stock-table th {
+  border: 1px solid var(--table-border);
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.stock-table td {
+  border-bottom: 1px solid var(--table-border);
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.stock-table tbody tr:hover {
+  background-color: var(--table-hover);
+}
+
+/* Portfolio Section */
+.portfolio-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+  background: white;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 10px var(--box-shadow-color);
+  padding: 20px;
+}
+
+.portfolio-chart {
+  max-width: 400px;
+  flex: 0 0 45%;
+  margin: 0;
+}
+
+.portfolio-table {
+  flex: 0 0 50%;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  box-shadow: 0 2px 6px var(--box-shadow-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  padding: 20px;
+}
+
+.portfolio-table thead th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.portfolio-table tbody td {
+  border-bottom: 1px solid var(--table-border);
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.portfolio-table tbody tr:hover {
+  background-color: var(--table-hover);
+}
+
+.portfolio-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Portfolio Form */
+form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 6px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 6px 12px;
+  background-color: var(--primary-btn);
+  color: var(--text-light);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: var(--primary-btn-hover);
+}
