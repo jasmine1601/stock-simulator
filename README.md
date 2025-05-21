@@ -18,13 +18,8 @@ It features a **Java Spring Boot backend** and a **ReactJS frontend**, allowing 
 
 ## Tech Stack
 
-### Frontend
-
-* ReactJS
-
-### Backend
-
-* Java 21, Spring Boot 3.2.2, Spring Data JPA
+* **Frontend**: ReactJS
+* **Backend**: Java 21, Spring Boot 3.2.2, Spring Data JPA
 * **Database**: H2 (In-memory)
 * **Build Tool**: Maven
 
