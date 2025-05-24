@@ -80,38 +80,38 @@ npm start
 
 ### **Stock APIs**
 
-| Method | Endpoint                           | Description         |
-| ------ | ---------------------------------- | ------------------- |
-| `GET`  | `/stocks`                          | Get all stocks      |
-| `GET`  | `/stocks/{symbol}`                 | Get stock by symbol |
-| `PUT`  | `/stocks/{symbol}/price?price=100` | Update stock price  |
+| Method | Endpoint                               | Description         |
+| ------ | -------------------------------------- | ------------------- |
+| `GET`  | `/api/stocks`                          | Get all stocks      |
+| `GET`  | `/api/stocks/{symbol}`                 | Get stock by symbol |
+| `PUT`  | `/api/stocks/{symbol}/price?price=100` | Update stock price  |
 
 ### **Portfolio APIs**
 
-| Method | Endpoint            | Description        |
-| ------ | ------------------- | ------------------ |
-| `GET`  | `/portfolio/{user}` | Get user portfolio |
-| `POST` | `/portfolio/buy`    | Buy stocks         |
-| `POST` | `/portfolio/sell`   | Sell stocks        |
+| Method | Endpoint                | Description        |
+| ------ | ----------------------- | ------------------ |
+| `GET`  | `/api/portfolio/{user}` | Get user portfolio |
+| `POST` | `/api/portfolio/buy`    | Buy stocks         |
+| `POST` | `/api/portfolio/sell`   | Sell stocks        |
 
 ## Example API Usage
 
 ### **1. Get All Stocks**
 
 ```sh
-curl -X GET http://localhost:8080/stocks
+curl -X GET http://localhost:8080/api/stocks
 ```
 
 ### **2. Buy Stock**
 
 ```sh
-curl -X POST "http://localhost:8080/portfolio/buy?user=John&symbol=AAPL&quantity=10"
+curl -X POST "http://localhost:8080/api/portfolio/buy?user=John&symbol=AAPL&quantity=10"
 ```
 
 ### **3. Sell Stock**
 
 ```sh
-curl -X POST "http://localhost:8080/portfolio/sell?user=John&symbol=AAPL&quantity=5"
+curl -X POST "http://localhost:8080/api/portfolio/sell?user=John&symbol=AAPL&quantity=5"
 ```
 
 ---
