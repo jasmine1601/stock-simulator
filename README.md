@@ -10,7 +10,7 @@ It features a **Java Spring Boot backend** and a **ReactJS frontend**, allowing 
 - View available stocks and their prices
 - Edit stock prices
 - View a user's portfolio
-- Backend support for buying and selling stocks
+- Buy and sell stocks
 - React frontend with interactive UI and pie charts
 - RESTful APIs powered by Spring Boot
 - In-memory H2 database for easy setup
@@ -139,7 +139,6 @@ stock-simulator/
 
 ## **Improvements & Future Enhancements**
 
-- Add UI support for buying and selling stocks.
 - Enhance UI/UX design for a more modern, intuitive, and responsive interface using styling libraries.
 - Replace H2 with a persistent database like **PostgreSQL** or **MySQL**.
 - Add **user authentication** and roles (e.g., admin, trader).

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getPortfolio } from "../services/api";
+import { getPortfolio, buyStock, sellStock } from "../services/api";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
@@ -9,6 +9,8 @@ function Portfolio() {
   const [user, setUser] = useState("");
   const [portfolio, setPortfolio] = useState([]);
   const [chartData, setChartData] = useState(null);
+  const [symbol, setSymbol] = useState("");
+  const [quantity, setQuantity] = useState(0);
 
   const fetchPortfolio = () => {
     if (!user.trim()) return;
@@ -34,6 +36,14 @@ function Portfolio() {
     });
   };
 
+  const handleBuy = () => {
+    buyStock(user, symbol, quantity).then(() => fetchPortfolio());
+  };
+
+  const handleSell = () => {
+    sellStock(user, symbol, quantity).then(() => fetchPortfolio());
+  };
+
   return (
     <div>
       <h2>💼 Portfolio</h2>
@@ -50,6 +60,31 @@ function Portfolio() {
           onChange={(e) => setUser(e.target.value)}
         />
         <button type="submit">Load Portfolio</button>
+      </form>
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Stock Symbol"
+          value={symbol}
+          onChange={(e) => setSymbol(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Quantity"
+          value={quantity}
+          onChange={(e) => setQuantity(parseInt(e.target.value))}
+        />
+        <button type="button" onClick={handleBuy}>
+          Buy
+        </button>
+        <button type="button" onClick={handleSell}>
+          Sell
+        </button>
       </form>
 
       {portfolio.length > 0 && chartData && (

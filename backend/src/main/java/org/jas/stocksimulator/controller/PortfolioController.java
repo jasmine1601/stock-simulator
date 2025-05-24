@@ -20,4 +20,14 @@ public class PortfolioController {
     public List<Portfolio> getPortfolioByUser(@PathVariable String userName) {
         return portfolioService.getUserPortfolio(userName);
     }
+
+    @PostMapping("/buy")
+    public void buyStock(@RequestParam String userName, @RequestParam String symbol, @RequestParam int quantity) {
+        portfolioService.buyStock(userName, symbol, quantity);
+    }
+
+    @PostMapping("/sell")
+    public void sellStock(@RequestParam String userName, @RequestParam String symbol, @RequestParam int quantity) {
+        portfolioService.sellStock(userName, symbol, quantity);
+    }
 }

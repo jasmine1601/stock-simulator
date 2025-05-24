@@ -30,7 +30,7 @@ public class Portfolio {
         return id;
     }
 
-    public String getUser() {
+    public String getUserName() {
         return userName;
     }
 
